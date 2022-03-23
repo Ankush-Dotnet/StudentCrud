@@ -1,0 +1,61 @@
+﻿@page
+@model WebApplication4_Razor.Pages.BookList.EditModel
+@{
+}
+<h2 class="text-primary">Edit</h2>
+<form method="post">
+    <div asp-validation-summary="All " class="text-danger"></div>
+    <input type="hidden" asp-for="book.Id"/>
+<div class=" table d-table table-bordered">
+    <br />
+<div class="container">
+  <div class="form-group row">
+      <div class="col-3">
+          <label asp-for="book.Name"></label>
+      </div>
+      <div class="col-6">
+          <input asp-for="book.Name"class="form-control" />
+      </div>
+      <span asp-validation-for="book.Name" class="text-danger"></span>
+  </div> 
+
+</div>
+<div class="container">
+    <div class="form-group row">
+        <div class="col-3">
+            <label asp-for="book.Author"></label>
+        </div>
+        <div class="col-6">
+            <input asp-for="book.Author" class="form-control" />
+        </div>
+        <span asp-validation-for="book.Author" class="text-danger"></span>
+    </div>
+
+</div><div class="container">
+    <div class="form-group row">
+        <div class="col-3">
+            <label asp-for="book.ISBN"></label>
+        </div>
+        <div class="col-6">
+            <input asp-for="book.ISBN" class="form-control" />
+        </div>
+        <span asp-validation-for="book.ISBN" class="text-danger"></span>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group row offset-3">
+        <div class="col-3">
+            <input type="submit" value="Update" class="btn btn-success" />
+        </div>
+        <div class="col-3">
+            <a asp-page="Index" class="btn btn-danger">Back To List</a> 
+        </div>
+    </div>
+</div>
+    <br />
+</div>
+</form>
+@section Scripts
+{
+ <partial name="_ValidationScriptsPartial" />
+}

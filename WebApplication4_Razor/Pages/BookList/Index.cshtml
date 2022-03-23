@@ -1,0 +1,71 @@
+﻿@page
+@model WebApplication4_Razor.Pages.BookList.IndexModel
+@{
+}
+<div class="row">
+    <div class="col-9 border-bottom">
+        <h2 class="text-primary">Student List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-page="Upsert" class="btn btn-info">
+            Create New Student
+        </a>
+    </div>
+</div>
+@*<div class="col-12 p-2">
+    @if (Model.Books.Count() > 0)
+    {
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr class=" table table-secondary">
+                <th><label asp-for="Books.FirstOrDefault().Name"></label></th>
+                <th><label asp-for="Books.FirstOrDefault().Author"></label></th>
+                <th><label asp-for="Books.FirstOrDefault().ISBN"></label></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <form method="post">
+        <tbody>
+            @foreach (var item in Model.Books)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Author</td>
+                    <td>@item.ISBN</td>
+                    <td>
+                        <a asp-page="Upsert" asp-route-id="@item.Id" class="btn btn-link">Edit</a>
+                        <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Want To Delete Data?')" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </form>
+    </table>
+        
+    }
+    else
+    {
+        <p>No Data Found</p>
+    }
+</div>*@
+<br />
+@*<h2 class="text-info text-capitalize text-center">Or</h2>*@
+<div class="table table-bordered table-striped">
+    <table id="tbldata" class="table table-bordered">
+        <thead>
+            <tr class="table-secondary">
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class</th>
+                <th>Subjects</th>
+                <th>Marks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section Scripts
+{
+<script src="~/js/book.js"></script>
+}
